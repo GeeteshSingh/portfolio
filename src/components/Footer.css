@@ -1,0 +1,19 @@
+/* Footer.css */
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #121212;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer.dark-mode {
+    background-color: #1f1f1f;
+}
+
+footer p {
+    margin: 0;
+}

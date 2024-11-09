@@ -1,0 +1,39 @@
+/* App.css or Header.css */
+
+/* Default light mode styles */
+body {
+    background-color: #f8f8f8;
+    color: #000; /* Default text color - black */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1f1f1f;
+    color: #fff; /* White text color when dark mode is enabled */
+}
+
+/* Style for FontAwesome icons */
+.theme-toggle i, .social-links a {
+    color: #000; /* Default color (black) for icons in light mode */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Dark mode icon color */
+body.dark-mode .theme-toggle i,
+body.dark-mode .social-links a {
+    color: #fff; /* White color for icons in dark mode */
+}
+
+/* Additional specific styling can be applied to individual elements, for example */
+.header, .footer, .profile-info, .social-links {
+    transition: color 0.3s ease;
+}
+
+/* Dark mode adjustments for specific elements */
+body.dark-mode .header,
+body.dark-mode .footer,
+body.dark-mode .profile-info,
+body.dark-mode .social-links {
+    color: #fff; /* Ensure text inside header, footer, profile, and social links is white */
+}
