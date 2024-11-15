@@ -1,10 +1,11 @@
+/* Default styles for light mode */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #1d1d1d;
-    color: #fff;
+    background-color: #f8f8f8; /* Light mode background color */
+    color: #000; /* Light mode text color */
     width: 100%;
     position: fixed;
     top: 0;
@@ -13,24 +14,22 @@ header {
     box-sizing: border-box;
 }
 
-header.dark-mode {
-    background-color: #1f1f1f;
-}
-
 nav {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
     width: 100%;
-    max-width: 1200px;
 }
 
 nav ul {
     display: flex;
-    gap: 2rem;
-    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none; /* Remove bullet points */
     margin: 0;
     padding: 0;
+
+    width: 100%; /* Ensure full width for even spacing */
 }
 
 nav ul li {
@@ -38,7 +37,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #000; /* Light mode link color */
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease;
@@ -51,29 +50,27 @@ nav ul li a:hover {
     background-color: rgba(0, 223, 196, 0.2);
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffe05d;
-    cursor: pointer;
-    margin: 0;
-    text-align: center;
-    flex-grow: 0;
+/* Dark mode styles for header */
+header.dark-mode {
+    background-color: #1d1d1d; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    transition: opacity 0.5s ease;
+header.dark-mode nav ul li a {
+    color: #fff; /* Dark mode link color */
 }
 
+header .theme-toggle {
+    color: #000; /* Default theme toggle color for light mode */
+}
+
+/* Dark mode theme toggle */
+header.dark-mode .theme-toggle {
+    color: #fff; /* Dark mode theme toggle color */
+}
+
+/* Body styles for dark mode */
 body.dark-mode {
     background-color: #1f1f1f;
-    color: #f8f8f8;
+    color: #fff; /* Dark mode text color */
 }

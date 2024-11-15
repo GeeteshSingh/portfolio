@@ -1,16 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Profile.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faGithub, faLinkedinIn, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import ReactEmojis from "@souhaildev/reactemojis";
 
 const Profile = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleTheme = () => {
+        setIsDarkMode(!isDarkMode);
+        document.body.classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on body
+        document.querySelector('.profile-container').classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on profile container
+        document.querySelector('header').classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on header
+    };
+
     return (
-        <div className="profile-container">
+        <div id="home" className={`profile-container ${isDarkMode ? "dark-mode" : ""}`}>
             <div className="profile-info-container">
                 <img src="/me.png" alt="Profile" className="profile-image"/>
                 <div className="profile-info">
-                    <h1>Hi, I'm Geetesh</h1>
+                    <h1>Hi, I'm Geetesh
+                        <picture>
+                            <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fb/512.webp"
+                                    type="image/webp"/>
+                            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fb/512.gif" alt="👋"
+                                 width="32" height="32"/>
+                        </picture>
+                    </h1>
                     <p>🧑🏻‍💻 a Developer.</p>
                     <p>🌍 based in the India</p>
                     <p>📧 singh.geetesh1998@gmail.com</p>
@@ -36,7 +53,6 @@ const Profile = () => {
                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faEnvelope}/>
                 </a>
-
             </div>
         </div>
     );

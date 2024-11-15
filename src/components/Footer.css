@@ -1,17 +1,12 @@
-/* Footer.css */
-
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #121212;
-    color: #fff;
+    background-color: inherit;
+    color: inherit;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-footer.dark-mode {
-    background-color: #1f1f1f;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 footer p {

@@ -1,39 +1,72 @@
-/* App.css or Header.css */
+:root {
+    --header-bg-light: #ffffff;
+    --header-bg-dark: #222222;
+    --header-text-light: #000000;
+    --header-text-dark: #ffffff;
+    --card-bg-light: #f0f0f0;
+    --card-bg-dark: #333333;
+    --card-text-light: #000000;
+    --card-text-dark: #ffffff;
+}
 
-/* Default light mode styles */
 body {
-    background-color: #f8f8f8;
-    color: #000; /* Default text color - black */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 body.dark-mode {
-    background-color: #1f1f1f;
-    color: #fff; /* White text color when dark mode is enabled */
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* Style for FontAwesome icons */
-.theme-toggle i, .social-links a {
-    color: #000; /* Default color (black) for icons in light mode */
-    transition: color 0.3s ease; /* Smooth transition for icon color */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode icon color */
-body.dark-mode .theme-toggle i,
-body.dark-mode .social-links a {
-    color: #fff; /* White color for icons in dark mode */
+header.light-mode {
+    background-color: var(--header-bg-light);
+    color: var(--header-text-light);
 }
 
-/* Additional specific styling can be applied to individual elements, for example */
-.header, .footer, .profile-info, .social-links {
-    transition: color 0.3s ease;
+header.dark-mode {
+    background-color: var(--header-bg-dark);
+    color: var(--header-text-dark);
 }
 
-/* Dark mode adjustments for specific elements */
-body.dark-mode .header,
-body.dark-mode .footer,
-body.dark-mode .profile-info,
-body.dark-mode .social-links {
-    color: #fff; /* Ensure text inside header, footer, profile, and social links is white */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    color: var(--card-text-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg-dark);
+    color: var(--card-text-dark);
 }

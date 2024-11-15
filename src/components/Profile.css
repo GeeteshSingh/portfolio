@@ -3,34 +3,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 180px;             /* Adjusted to better fit larger elements */
+    margin-top: 180px;
     text-align: center;
-    gap: 40px;                     /* Increased gap for more space */
-    padding: 0 20px;               /* Add padding for a balanced layout */
+    gap: 40px;
+    padding: 0 20px;
+}
+
+body.dark-mode .profile-container {
+    color: #fff; /* Dark mode text color for profile */
+}
+
+body:not(.dark-mode) .profile-container {
+    color: #000; /* Light mode text color for profile */
 }
 
 .profile-info-container {
     display: flex;
     justify-content: center;
-    gap: 50px;                     /* Increase gap between image and text */
+    gap: 50px;
     align-items: center;
 }
 
 .profile-image {
-    width: 30vh;                   /* Increased image size */
+    width: 30vh;
     height: 30vh;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .profile-info {
-    font-size: 2rem;               /* Larger font size for readability */
-    color: #333;
+    font-size: 2rem;
     text-align: left;
 }
 
 .profile-info h1 {
-    font-size: 3rem;               /* Larger heading */
+    font-size: 3rem;
     font-weight: bold;
     margin: 15px 0;
 }
@@ -46,8 +53,50 @@
 }
 
 .social-links a {
-    margin-right: 25px;            /* More space between icons */
-    font-size: 3.5rem;             /* Increased icon size */
+    margin-right: 25px;
+    font-size: 3.5rem;
     color: #333;
     text-decoration: none;
+}
+
+body.dark-mode .social-links a {
+    color: #fff; /* Dark mode social links */
+}
+
+body:not(.dark-mode) .social-links a {
+    color: #000; /* Light mode social links */
+}
+
+.profile-image:hover {
+    animation: twitch 0.2s ease-in-out;
+}
+
+.profile-container:hover {
+    animation: twitch 0.2s ease-in-out; /* Apply the twitch effect on hover */
+}
+/* Add a transition and the twitch animation when hovering over each text element */
+.profile-info p:hover {
+    animation: twitch 0.3s ease-in-out;
+}
+
+/* Keyframe animation for twitch effect */
+@keyframes twitch {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    20% {
+        transform: translateX(-3px); /* Move slightly to the left */
+    }
+    40% {
+        transform: translateX(3px); /* Move slightly to the right */
+    }
+    60% {
+        transform: translateX(-2px); /* Move slightly to the left again */
+    }
+    80% {
+        transform: translateX(2px); /* Move slightly to the right again */
+    }
+    100% {
+        transform: translateX(0); /* Return to the original position */
+    }
 }

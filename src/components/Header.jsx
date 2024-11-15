@@ -1,48 +1,45 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import './Header.css';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import BatmanLogo from '../assests/batman.png';
 
 const Header = () => {
-    // State to toggle dark mode
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // Effect to toggle body class when the mode changes
     useEffect(() => {
         if (isDarkMode) {
             document.body.classList.add('dark-mode');
+            document.querySelector('header').classList.add('dark-mode');
         } else {
             document.body.classList.remove('dark-mode');
+            document.querySelector('header').classList.remove('dark-mode');
         }
     }, [isDarkMode]);
 
-    // Toggle function to switch between light and dark modes
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     };
 
     return (
-        <header>
+        <header className={`header ${isDarkMode ? 'dark-mode' : ''}`}>
             <div className="logo">
-    <span>
-        <a href="#home">
-<img src={BatmanLogo} alt="Batman Logo" style={{width: '50px', height: '50px'}}/>
-        </a>
-    </span>
+                <Link to="/">
+                    <img src={BatmanLogo} alt="Batman Logo" style={{width: '50px', height: '50px'}}/>
+                </Link>
             </div>
-
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About Me</Link></li>
+                    <li><Link to="/projects">Projects</Link></li>
                 </ul>
             </nav>
-            <button className="theme-toggle" onClick={toggleTheme}>
-                <FontAwesomeIcon icon={isDarkMode ? "fa-solid fa-sun" : "fa-solid fa-moon"}/>
-                <span role="img" aria-label="theme-toggle">
-                    {isDarkMode ? "☀️" : "🌙"}
-                </span>
+            <button>
+                <picture onClick={toggleTheme} style={{backgroundColor: "#000"}}>
+                    <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f52e/512.webp" type="image/webp"/>
+                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f52e/512.gif" alt="🔮" width="32"
+                         height="32"/>
+                </picture>
             </button>
         </header>
     );
