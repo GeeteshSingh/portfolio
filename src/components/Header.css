@@ -25,11 +25,10 @@ nav ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     margin: 0;
     padding: 0;
-
-    width: 100%; /* Ensure full width for even spacing */
+    width: 100%;
 }
 
 nav ul li {
@@ -37,7 +36,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000; /* Light mode link color */
+    color: #000;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease;
@@ -50,27 +49,24 @@ nav ul li a:hover {
     background-color: rgba(0, 223, 196, 0.2);
 }
 
-/* Dark mode styles for header */
 header.dark-mode {
-    background-color: #1d1d1d; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
+    background-color: #1d1d1d;
+    color: #fff;
 }
 
 header.dark-mode nav ul li a {
-    color: #fff; /* Dark mode link color */
+    color: #fff;
 }
 
 header .theme-toggle {
-    color: #000; /* Default theme toggle color for light mode */
+    color: #000;
 }
 
-/* Dark mode theme toggle */
 header.dark-mode .theme-toggle {
-    color: #fff; /* Dark mode theme toggle color */
+    color: #fff;
 }
 
-/* Body styles for dark mode */
 body.dark-mode {
     background-color: #1f1f1f;
-    color: #fff; /* Dark mode text color */
+    color: #fff;
 }

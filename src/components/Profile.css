@@ -10,11 +10,11 @@
 }
 
 body.dark-mode .profile-container {
-    color: #fff; /* Dark mode text color for profile */
+    color: #fff;
 }
 
 body:not(.dark-mode) .profile-container {
-    color: #000; /* Light mode text color for profile */
+    color: #000;
 }
 
 .profile-info-container {
@@ -60,11 +60,11 @@ body:not(.dark-mode) .profile-container {
 }
 
 body.dark-mode .social-links a {
-    color: #fff; /* Dark mode social links */
+    color: #fff;
 }
 
 body:not(.dark-mode) .social-links a {
-    color: #000; /* Light mode social links */
+    color: #000;
 }
 
 .profile-image:hover {
@@ -72,31 +72,30 @@ body:not(.dark-mode) .social-links a {
 }
 
 .profile-container:hover {
-    animation: twitch 0.2s ease-in-out; /* Apply the twitch effect on hover */
+    animation: twitch 0.2s ease-in-out;
 }
-/* Add a transition and the twitch animation when hovering over each text element */
+
 .profile-info p:hover {
     animation: twitch 0.3s ease-in-out;
 }
 
-/* Keyframe animation for twitch effect */
 @keyframes twitch {
     0% {
-        transform: translateX(0); /* Start at original position */
+        transform: translateX(0);
     }
     20% {
-        transform: translateX(-3px); /* Move slightly to the left */
+        transform: translateX(-3px);
     }
     40% {
-        transform: translateX(3px); /* Move slightly to the right */
+        transform: translateX(3px);
     }
     60% {
-        transform: translateX(-2px); /* Move slightly to the left again */
+        transform: translateX(-2px);
     }
     80% {
-        transform: translateX(2px); /* Move slightly to the right again */
+        transform: translateX(2px);
     }
     100% {
-        transform: translateX(0); /* Return to the original position */
+        transform: translateX(0);
     }
 }

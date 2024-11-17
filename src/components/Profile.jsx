@@ -10,9 +10,9 @@ const Profile = () => {
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
-        document.body.classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on body
-        document.querySelector('.profile-container').classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on profile container
-        document.querySelector('header').classList.toggle("dark-mode", !isDarkMode); // Toggle dark mode on header
+        document.body.classList.toggle("dark-mode", !isDarkMode);
+        document.querySelector('.profile-container').classList.toggle("dark-mode", !isDarkMode);
+        document.querySelector('header').classList.toggle("dark-mode", !isDarkMode);
     };
 
     return (
@@ -25,7 +25,7 @@ const Profile = () => {
                             <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fb/512.webp"
                                     type="image/webp"/>
                             <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fb/512.gif" alt="👋"
-                                 width="32" height="32"/>
+                                 width="42" height="47"/>
                         </picture>
                     </h1>
                     <p>🧑🏻‍💻 a Developer.</p>

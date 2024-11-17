@@ -5,7 +5,7 @@
     margin-top: 90px;
     gap: 20px;
     padding: 40px;
-    background-color: var(--background-color); /* Use dark or light mode variable */
+    background-color: var(--background-color);
 }
 
 .card {
@@ -84,7 +84,6 @@
     line-height: 1.5;
 }
 
-/* Dark mode support */
 body.dark-mode .card {
     background-color: var(--card-bg-dark);
     color: var(--card-text-dark);
