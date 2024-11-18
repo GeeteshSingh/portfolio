@@ -8,6 +8,32 @@
     --card-text-light: #000000;
     --card-text-dark: #ffffff;
 }
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Base font size */
+    scroll-behavior: smooth; /* Smooth scrolling across devices */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s; /* For theme toggling */
+}
+
+/* Responsive containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 
 body {
     margin: 0;
