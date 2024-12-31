@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Profile.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faGithub, faLinkedinIn, faTwitter} from '@fortawesome/free-brands-svg-icons';
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faCode, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import ReactEmojis from "@souhaildev/reactemojis";
 
 const Profile = () => {
@@ -49,6 +49,11 @@ const Profile = () => {
                 <a href="https://www.linkedin.com/in/geeteshsingh/" target="_blank" className="contact-details">
                     <FontAwesomeIcon icon={faLinkedinIn}/>
                 </a>
+
+                <a href="https://leetcode.com/u/GeeteshSingh/" target="_blank" className="contact-details">
+                    <FontAwesomeIcon icon={faCode}/>
+                </a>
+
                 <a href="mailto:singh.geetesh98@gmail.com" target="_blank" className="contact-details"
                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faEnvelope}/>
