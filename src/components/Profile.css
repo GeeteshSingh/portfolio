@@ -19,42 +19,67 @@ body:not(.dark-mode) .profile-container {
 
 .profile-info-container {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    flex-direction: column;
     align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
+/* For larger screens */
+@media (min-width: 768px) {
+    .profile-info-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        text-align: left;
+    }
+}
+
+/* Image size increased here */
 .profile-image {
-    width: 30vh;
-    height: 30vh;
+    width: 35vh; /* Changed from 30vh to 35vh */
+    height: 35vh; /* Changed from 30vh to 35vh */
     border-radius: 50%;
     object-fit: cover;
 }
 
+/* Adjust font size for smaller screens */
 .profile-info {
-    font-size: 2rem;
-    text-align: left;
+    font-size: 1.5rem;
 }
 
 .profile-info h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .profile-info p {
-    margin: 10px 0;
+    margin: 5px 0;
+}
+
+/* Adjust image size for smaller screens */
+@media (max-width: 480px) {
+    .profile-image {
+        width: 20vh; /* Changed from 15vh to 20vh */
+        height: 20vh; /* Changed from 15vh to 20vh */
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .social-links a {
-    margin-right: 25px;
-    font-size: 3.5rem;
+    margin: 10px;
+    font-size: 2rem;
     color: #333;
     text-decoration: none;
 }
@@ -67,16 +92,10 @@ body:not(.dark-mode) .social-links a {
     color: #000;
 }
 
-.profile-image:hover {
-    animation: twitch 0.2s ease-in-out;
-}
-
-.profile-container:hover {
-    animation: twitch 0.2s ease-in-out;
-}
-
+/* Smooth hover effects */
+.profile-image:hover,
 .profile-info p:hover {
-    animation: twitch 0.3s ease-in-out;
+    animation: twitch 0.2s ease-in-out;
 }
 
 @keyframes twitch {
