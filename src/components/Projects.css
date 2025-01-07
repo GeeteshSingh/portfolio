@@ -1,3 +1,18 @@
+/* Light Theme */
+:root {
+    --card-bg-light: #fff;
+    --card-text-light: #000;
+    --card-bg-dark: #333;
+    --card-text-dark: #fff;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    --card-bg-light: var(--card-bg-dark); /* Switch card background to dark */
+    --card-text-light: var(--card-text-dark); /* Switch card text to light */
+}
+
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -11,10 +26,11 @@
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, background-color 0.3s, color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
     text-align: left;
     overflow: hidden;
 }
+
 
 .card:hover {
     transform: scale(1.05);
@@ -43,4 +59,50 @@
 body.dark-mode .card {
     background-color: var(--card-bg-dark);
     color: var(--card-text-dark);
+}
+
+/* About Section Dark Mode */
+body.dark-mode .about-section {
+    background-color: #333;
+    color: #fff;
+}
+
+body:not(.dark-mode) .about-section {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Projects Section Dark Mode */
+body.dark-mode .projects-container {
+    background-color: #333;
+    color: #fff;
+}
+
+body:not(.dark-mode) .projects-container {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Card Styling for Both Sections */
+body.dark-mode .card {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body:not(.dark-mode) .card {
+    background-color: #f9f9f9;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+/* Modal for About Section */
+body.dark-mode .modal-content {
+    background-color: #444;
+    color: #fff;
+}
+
+body:not(.dark-mode) .modal-content {
+    background-color: #fff;
+    color: #000;
 }

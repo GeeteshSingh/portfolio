@@ -29,7 +29,7 @@ const Profile = () => {
                         </picture>
                     </h1>
                     <p>🧑🏻‍💻 a Developer.</p>
-                    <p>🌍 based in the India</p>
+                    <p>🌍 based in India</p>
                     <p>📧 singh.geetesh1998@gmail.com</p>
                 </div>
             </div>
