@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Profile.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faGithub, faLinkedinIn, faTwitter} from '@fortawesome/free-brands-svg-icons';
-import {faCode, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faCode, faEnvelope, faF} from '@fortawesome/free-solid-svg-icons';
 import ReactEmojis from "@souhaildev/reactemojis";
 
 const Profile = () => {
@@ -28,6 +28,7 @@ const Profile = () => {
                                  width="42" height="47"/>
                         </picture>
                     </h1>
+                        <p>Freelance: React fixes • SQL queries • Docker • Same-day delivery</p>
                     <p>🧑🏻‍💻 a Developer.</p>
                     <p>🌍 based in India</p>
                     <p>📧 singh.geetesh1998@gmail.com</p>
@@ -58,6 +59,9 @@ const Profile = () => {
                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faEnvelope}/>
                 </a>
+                <a href="https://www.fiverr.com/s/dDk5er0" target='_blank' className="contact-details"
+                rel='noopener noreferrer'>
+<FontAwesomeIcon icon={faF} />                </a>
             </div>
         </div>
     );
