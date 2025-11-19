@@ -4,7 +4,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f8f8f8; /* Light mode background color */
+    background-color: #fdfefd; /* Light mode background color */
     color: #000; /* Light mode text color */
     width: 100%;
     position: fixed;
