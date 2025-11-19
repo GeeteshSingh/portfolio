@@ -15,10 +15,12 @@ const About = () => {
     return (
         <div className="about-section">
             <div className="cards-container">
+                
                 <div
                     className="card"
                     onClick={() => handleCardClick("about")}
                 >
+                    
                     <h2>About Me</h2>
                     <div className="card-text">
                         <p>Brief summary about me ...</p>
@@ -93,7 +95,7 @@ const About = () => {
                                     </li>
                                     <li>
                                         <strong>Data Engineering & ETL:</strong> AbInitio, Spark,
-                                        Databricks, MySQL, Kafka, IBM Data Stage
+                                        Databricks, MySQL, Kafka, IBM Data Stage, PostgresSQL
                                     </li>
                                     <li>
                                         <strong>DevOps & Cloud:</strong> Docker, Bash Scripting,
@@ -127,6 +129,15 @@ const About = () => {
                     </div>
                 </div>
             )}
+            <a 
+  href="/resume.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="resume-btn"
+>
+  View Resume
+</a>
+
         </div>
     );
 };

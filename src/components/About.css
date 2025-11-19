@@ -171,3 +171,20 @@ body:not(.dark-mode) .modal-content {
     background-color: #fff;
     color: #000;
 }
+
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 8px 0 0;
+  background-color: #007bff;     /* Use your theme color */
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.25s ease;
+}
+
+.resume-btn:hover {
+  background-color: #0056b3;
+}

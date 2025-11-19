@@ -28,10 +28,11 @@ const Profile = () => {
                                  width="42" height="47"/>
                         </picture>
                     </h1>
-                        <p>Freelance: React fixes • SQL queries • Docker • Same-day delivery</p>
                     <p>🧑🏻‍💻 a Developer.</p>
                     <p>🌍 based in India</p>
                     <p>📧 singh.geetesh1998@gmail.com</p>
+                        <p>Available for <b>freelance </b>work:<br/> React fixes • UI bugs • Deploy issues</p>
+
                 </div>
             </div>
             <div className="social-links">
