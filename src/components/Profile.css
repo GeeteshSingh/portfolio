@@ -266,7 +266,7 @@ body.dark-mode .btn-secondary:hover {
     align-items: center;
     justify-content: center;
     background: rgba(148, 163, 184, 0.12);
-    color: #e5e7eb;
+    color: #303131;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
