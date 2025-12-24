@@ -11,20 +11,22 @@ import {
     faCodepen
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faCode } from '@fortawesome/free-solid-svg-icons';
-import useCursorPosition from '../hooks/useCursorPosition';
 import profileImage from '../assests/me.png';
 
 const Profile = () => {
     const navigate = useNavigate();
-    const mousePosition = useCursorPosition();
     const [gradientPosition, setGradientPosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        setGradientPosition({
-            x: (mousePosition.x / window.innerWidth) * 100,
-            y: (mousePosition.y / window.innerHeight) * 100
-        });
-    }, [mousePosition]);
+        const handleMove = (e) => {
+            setGradientPosition({
+                x: (e.clientX / window.innerWidth) * 100,
+                y: (e.clientY / window.innerHeight) * 100
+            });
+        };
+        window.addEventListener('mousemove', handleMove);
+        return () => window.removeEventListener('mousemove', handleMove);
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -46,18 +48,18 @@ const Profile = () => {
     };
 
     const socialLinks = [
-        { icon: faFacebookF, url: 'https://www.facebook.com/geeteshsin', label: 'Facebook' },
-        { icon: faGithub, url: 'https://github.com/GeeteshSingh', label: 'GitHub' },
-        { icon: faTwitter, url: 'https://twitter.com', label: 'Twitter' },
-        { icon: faLinkedinIn, url: 'https://linkedin.com/in/geeteshsingh', label: 'LinkedIn' },
-        { icon: faCodepen, url: 'https://codepen.io/geeteshsingh', label: 'CodePen' },
-        { icon: faCode, url: 'https://leetcode.com/u/GeeteshSingh/', label: 'LeetCode' },
-        { icon: faEnvelope, url: 'mailto:singh.geetesh1998@gmail.com', label: 'Email' }
+        { key: 'facebook', icon: faFacebookF, url: 'https://facebook.com/geeteshsin', label: 'Facebook' },
+        { key: 'github', icon: faGithub, url: 'https://github.com/GeeteshSingh', label: 'GitHub' },
+        { key: 'twitter', icon: faTwitter, url: 'https://x.com', label: 'Twitter' },
+        { key: 'linkedin', icon: faLinkedinIn, url: 'https://linkedin.com/in/geeteshsingh', label: 'LinkedIn' },
+        { key: 'codepen', icon: faCodepen, url: 'https://codepen.io/geeteshsingh', label: 'CodePen' },
+        { key: 'leetcode', icon: faCode, url: 'https://leetcode.com/u/GeeteshSingh/', label: 'LeetCode' },
+        { key: 'email', icon: faEnvelope, url: 'mailto:singh.geetesh1998@gmail.com', label: 'Email' }
     ];
 
     return (
         <div className="profile-wrapper">
-            {/* global moving glow */}
+            {/* moving glow */}
             <motion.div
                 className="gradient-blob"
                 style={{
@@ -74,21 +76,18 @@ const Profile = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* Jarvis image module */}
+                    {/* Jarvis image side */}
                     <motion.div variants={itemVariants} className="profile-image-wrapper">
-                        {/* outer rotating ring */}
                         <motion.div
                             className="jarvis-ring jarvis-ring-outer"
                             animate={{ rotate: 360 }}
                             transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
                         />
-                        {/* inner rotating ring (reverse) */}
                         <motion.div
                             className="jarvis-ring jarvis-ring-inner"
                             animate={{ rotate: -360 }}
                             transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
                         />
-                        {/* corner HUD blocks */}
                         <motion.div
                             className="jarvis-scanner scanner-top-left"
                             animate={{ y: [0, 8, 0] }}
@@ -99,18 +98,17 @@ const Profile = () => {
                             animate={{ y: [0, -8, 0] }}
                             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                         />
-
-                        {/* actual photo */}
                         <motion.img
                             src={profileImage}
                             alt="Geetesh Singh"
+                            loading="lazy"
                             className="profile-image"
                             variants={imageVariants}
                             whileHover="hover"
                         />
                     </motion.div>
 
-                    {/* Text */}
+                    {/* Text side */}
                     <motion.div variants={itemVariants} className="profile-text">
                         <motion.h1 className="gradient-text">
                             Hi, I'm <span>Geetesh Singh</span>
@@ -118,6 +116,28 @@ const Profile = () => {
                         <motion.p className="subtitle">
                             Full Stack Developer | Data Engineer | DevOps Enthusiast
                         </motion.p>
+
+                        {/* stats row */}
+                        <motion.div
+                            className="profile-stats"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <motion.div className="stat-pill" variants={itemVariants}>
+                                <span className="stat-number">4+</span>
+                                <span className="stat-label">Years Experience</span>
+                            </motion.div>
+                            <motion.div className="stat-pill" variants={itemVariants}>
+                                <span className="stat-number">15+</span>
+                                <span className="stat-label">Projects</span>
+                            </motion.div>
+                            <motion.div className="stat-pill" variants={itemVariants}>
+                                <span className="stat-number">Data · DevOps · FE</span>
+                                <span className="stat-label">End‑to‑end delivery</span>
+                            </motion.div>
+                        </motion.div>
+
                         <motion.p className="description">
                             I craft reliable data pipelines, cloud‑native systems and modern web experiences
                             using technologies like Kafka, AWS, React and CI/CD automation.
@@ -170,7 +190,7 @@ const Profile = () => {
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.25, y: -4 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="social-icon"
+                                    className={`social-icon social-${link.key}`}
                                     title={link.label}
                                 >
                                     <FontAwesomeIcon icon={link.icon} size="2x" />
@@ -180,6 +200,22 @@ const Profile = () => {
                     </motion.div>
                 </motion.div>
             </section>
+
+            {/* scroll hint */}
+            <motion.div
+                className="scroll-hint"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    delay: 1.2,
+                    duration: 0.6,
+                    repeat: Infinity,
+                    repeatType: 'reverse'
+                }}
+            >
+                <span>Scroll to explore</span>
+                <span className="scroll-arrow">↓</span>
+            </motion.div>
         </div>
     );
 };
