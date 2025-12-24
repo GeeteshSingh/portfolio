@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './About.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+
 import {
     // Programming
     SiPython, SiJavascript, SiTypescript,
@@ -234,8 +237,21 @@ Enjoys shipping production‑ready solutions, mentoring teammates and constantly
                                 exit="exit"
                             >
                                 <p>{aboutText}</p>
+
+                                <motion.a
+                                    href="https://drive.google.com/file/d/1_6E4pV2eBGxz9Ah2j8FaJg3rqwjtG82e/view"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="about-resume-btn"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <FontAwesomeIcon icon={faDownload} />
+                                    <span>Download Resume</span>
+                                </motion.a>
                             </motion.div>
                         )}
+
 
                         {activeTab === 'timeline' && (
                             <motion.div

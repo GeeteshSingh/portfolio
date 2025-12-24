@@ -1,114 +1,16 @@
 .footer {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(15, 15, 30, 0.8) 100%);
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-    padding: 3rem 2rem 2rem;
+    padding: 2rem 1.5rem;
     text-align: center;
+    border-top: 1px solid rgba(0, 212, 255, 0.15);
     margin-top: 4rem;
-}
-
-body:not(.dark-mode) .footer {
-    background: linear-gradient(135deg, rgba(245, 245, 245, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.footer-resume-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.875rem 1.75rem;
-    background: linear-gradient(135deg, #00d4ff 0%, #a78bfa 100%);
-    color: #0f0f1e;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    will-change: transform, box-shadow;
-}
-
-.footer-resume-link:hover {
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
-    transform: translateY(-3px);
-}
-
-body:not(.dark-mode) .footer-resume-link {
-    color: #fff;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.footer-social-link {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 212, 255, 0.1);
-    color: #00d4ff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    will-change: transform, background-color;
-}
-
-.footer-social-link:hover {
-    background: rgba(0, 212, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-    padding-top: 2rem;
-}
-
-.footer-bottom p {
-    margin: 0.5rem 0;
     font-size: 0.95rem;
 }
 
-.footer-subtext {
-    opacity: 0.6;
-    font-size: 0.85rem;
+.footer p {
+    margin: 0.25rem 0;
 }
 
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .footer-resume-link {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .footer-socials {
-        gap: 0.75rem;
-    }
-
-    .footer-social-link {
-        width: 45px;
-        height: 45px;
-    }
+.footer-date {
+    opacity: 0.7;
+    font-size: 0.85rem;
 }
