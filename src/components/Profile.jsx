@@ -11,7 +11,7 @@ import {
     faCodepen
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faCode } from '@fortawesome/free-solid-svg-icons';
-import profileImage from '../assests/me2.png';
+import profileImage from '../assests/me.png';
 
 const Profile = () => {
     const navigate = useNavigate();
