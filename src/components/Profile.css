@@ -257,7 +257,6 @@ body.dark-mode .btn-secondary:hover {
     flex-wrap: wrap;
     gap: 0.75rem;
 }
-
 .social-icon {
     width: 40px;
     height: 40px;
@@ -266,9 +265,19 @@ body.dark-mode .btn-secondary:hover {
     align-items: center;
     justify-content: center;
     background: rgba(148, 163, 184, 0.12);
-    color: #303131;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
+
+/* dark theme: white icons */
+body.dark-mode .social-icon {
+    color: #ffffff;
+}
+
+/* light theme: black icons */
+body:not(.dark-mode) .social-icon {
+    color: #000000;
+}
+
 
 /* brand hover colors */
 .social-facebook:hover { color: #3b82f6; }
